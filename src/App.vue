@@ -1,15 +1,14 @@
 <template>
   <v-app>
+    <!--  -->
     <v-main>
-      <!--  -->
-
-      <!-- <router-view /> -->
-      <!-- <my-subscription></my-subscription> -->
-      <!-- <profile></profile> -->
-      <!-- <settings></settings> -->
-      <!-- <test-overview> </test-overview> -->
-      <home></home>
+      <router-view></router-view>
     </v-main>
+    <!-- <my-subscription></my-subscription> -->
+    <!-- <profile></profile> -->
+    <!-- <settings></settings> -->
+    <!-- <test-overview> </test-overview> -->
+    <!-- <home></home> -->
   </v-app>
 </template>
 

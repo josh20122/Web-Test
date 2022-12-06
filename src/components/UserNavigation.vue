@@ -8,6 +8,7 @@
       <v-list-item
         v-for="(item, i) in items"
         :key="i"
+        :to="item.path"
         :value="item"
         active-color="secondaryBg"
       >
@@ -20,10 +21,12 @@
     </v-list>
     <template v-slot:append>
       <div class="pa-2">
-        <v-btn block color="red" variant="outlined">
-          <v-icon start>mdi-logout</v-icon>
-          <span class="normal-case">Log out</span>
-        </v-btn>
+        <router-link to="/">
+          <v-btn block color="red" variant="outlined">
+            <v-icon start>mdi-logout</v-icon>
+            <span class="normal-case">Log out</span>
+          </v-btn>
+        </router-link>
       </div>
     </template>
   </v-navigation-drawer>
@@ -59,10 +62,14 @@ export default {
     return {
       drawer: true,
       items: [
-        { text: "Test Overview", icon: "mdi-poll" },
-        { text: "Profile", icon: "mdi-account-badge-outline" },
-        { text: "My subscriptions", icon: "mdi-home-circle-outline" },
-        { text: "Settings", icon: "mdi-cog-outline" },
+        { text: "Test Overview", icon: "mdi-poll", path: "test-overview" },
+        { text: "Profile", icon: "mdi-account-badge-outline", path: "profile" },
+        {
+          text: "My subscriptions",
+          icon: "mdi-home-circle-outline",
+          path: "subscription",
+        },
+        { text: "Settings", icon: "mdi-cog-outline", path: "settings" },
       ],
     };
   },

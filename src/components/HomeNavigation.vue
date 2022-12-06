@@ -23,10 +23,17 @@
     </v-tabs>
     <v-spacer></v-spacer>
     <div class="inline-flex md:mr-16">
-      <v-btn color="" flat density="0" elevation="0">
+      <v-btn to="/test-overview" color="" flat density="0" elevation="0">
         <span class="normal-case"> Log in </span>
       </v-btn>
-      <v-btn size="large" flat color="" class="bg-secondaryBg normal-case">
+
+      <v-btn
+        to="/test-overview"
+        size="large"
+        flat
+        color=""
+        class="bg-secondaryBg normal-case"
+      >
         <span class="normal-case text-sm"> Get started </span>
       </v-btn>
     </div>

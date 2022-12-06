@@ -51,13 +51,13 @@
 <script>
 import AddPaymentMethod from "./AddPaymentMethod.vue";
 export default {
+  data() {
+    return {
+      paymentModal: false,
+    };
+  },
   components: {
     AddPaymentMethod,
-    data() {
-      return {
-        paymentModal: true,
-      };
-    },
   },
 };
 </script>

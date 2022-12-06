@@ -40,7 +40,7 @@
           class="bg-white"
         ></VSelect>
         <div>
-          <v-btn color="secondaryBg" size="x-large" flat>
+          <v-btn to="/test-overview" color="secondaryBg" size="x-large" flat>
             <span class="normal-case text-sm"> Run testing</span>
           </v-btn>
         </div>
