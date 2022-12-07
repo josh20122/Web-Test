@@ -1,9 +1,9 @@
 import App from './App.vue'
 
-import { createApp } from "vue.js";
-import router from './plugins/router.js';
+import { createApp } from "vue";
+import router from './plugins/router';
 
-import { registerPlugins } from '@/plugins.js'
+import { registerPlugins } from '@/plugins'
 
  
 const app = createApp(App).use(router)
