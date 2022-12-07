@@ -5,8 +5,8 @@
  */
 
 // Plugins
-import { loadFonts } from './webfontloader'
-import vuetify from './vuetify'
+import { loadFonts } from './webfontloader.js'
+import vuetify from './vuetify.js'
 
 export function registerPlugins (app) {
   loadFonts()
