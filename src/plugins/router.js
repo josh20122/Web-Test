@@ -10,6 +10,7 @@ import Pricing from "@/pages/Pricing.vue"
 import Login from "@/auth/Login.vue"
 import Support from "@/pages/Support.vue"
 import Register from "@/auth/Register.vue"
+import NotFound from "@/pages/NotFound.vue"
 
 
 
@@ -28,6 +29,9 @@ const router=createRouter({
         {path:'/login',name:'login',component:Login},
         {path:'/support',name:'support',component:Support},
         {path:'/register',name:'register',component:Register},
+        {path:'/:pathMatch(.*)*',name:'register',component:NotFound},
+
+        
     ]
  })
 

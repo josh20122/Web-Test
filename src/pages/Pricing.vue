@@ -178,13 +178,14 @@
                 >
               </li>
             </ul>
-            <a
+            <router-link
+              to="test-overview"
               href="#"
               class="
                 text-white
-                bg-primary-600
-                hover:bg-primary-700
-                focus:ring-4 focus:ring-primary-200
+                bg-blue-500
+                hover:bg-blue-600
+                focus:ring-4 focus:ring-blue-300
                 font-medium
                 rounded-lg
                 text-sm
@@ -193,7 +194,7 @@
                 text-center
                 dark:text-white dark:focus:ring-primary-900
               "
-              >Get started</a
+              >Get started</router-link
             >
           </div>
           <!-- Pricing Card -->
@@ -345,13 +346,14 @@
                 >
               </li>
             </ul>
-            <a
+            <router-link
+              to="test-overview"
               href="#"
               class="
                 text-white
-                bg-primary-600
-                hover:bg-primary-700
-                focus:ring-4 focus:ring-primary-200
+                bg-blue-500
+                hover:bg-blue-600
+                focus:ring-4 focus:ring-blue-300
                 font-medium
                 rounded-lg
                 text-sm
@@ -360,7 +362,7 @@
                 text-center
                 dark:text-white dark:focus:ring-primary-900
               "
-              >Get started</a
+              >Get started</router-link
             >
           </div>
           <!-- Pricing Card -->
@@ -510,13 +512,14 @@
                 >
               </li>
             </ul>
-            <a
+            <router-link
+              to="test-overview"
               href="#"
               class="
                 text-white
-                bg-primary-600
-                hover:bg-primary-700
-                focus:ring-4 focus:ring-primary-200
+                bg-blue-500
+                hover:bg-blue-600
+                focus:ring-4 focus:ring-blue-300
                 font-medium
                 rounded-lg
                 text-sm
@@ -525,7 +528,7 @@
                 text-center
                 dark:text-white dark:focus:ring-primary-900
               "
-              >Get started</a
+              >Get started</router-link
             >
           </div>
         </div>

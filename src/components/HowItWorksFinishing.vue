@@ -9,7 +9,7 @@
             We built this Website Speed Test to help you analyze your website
             load speed.
           </p>
-          <v-btn color="secondaryBg " flat size="large">
+          <v-btn to="/tete" color="secondaryBg " flat size="large">
             <span class="normal-case"> Start testing today </span>
             <v-icon end>mdi-arrow-right-thin</v-icon>
           </v-btn>
