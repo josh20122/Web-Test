@@ -2,11 +2,11 @@
   <!-- Email Modal -->
 
   <v-dialog v-model="modal">
-    <v-card max-width="360" class="mx-auto w-full">
+    <v-card max-width="450" class="mx-auto w-full">
       <v-card-text>
         <div class="flex justify-between">
           <div></div>
-          <div class="text-center font-semibold">Edit password</div>
+          <div class="text-center font-semibold">Add test</div>
           <div @click="modal=false">&#10005</div>
         </div>
       </v-card-text>
@@ -18,7 +18,7 @@
             name="currentEmail"
             placeholder="Enter your website URL"
             id="id"
-            model-value="example@"
+            model-value="example@mail.com"
             variant="outlined"
             type="text"
             prepend-inner-icon="mdi-web"
@@ -30,32 +30,65 @@
             prepend-inner-icon="mdi-map"
             variant="outlined"
             placeholder="Select one location set"
+            :items="locationOptions"
           ></v-select>
           <div class="grid grid-cols-2 gap-x-2">
             <div>
-              <label class="text-sm" for="">Re-enter password</label>
-              <v-select
-                density="compact"
-                variant="outlined" bg-color="white"
- autofocus    color="white"             clearable
-              ></v-select>
+              <label class="text-sm" for="">Browser type</label>
+              <v-menu
+      open-on-hover
+    >
+      <template v-slot:activator="{ props }">
+        <v-btn  v-bind="props" variant="outlined" class="w-full">
+          <div class="flex justify-start">
+
+            <img  class="w-4 h-4 mr-2" :src="selectedBrowser.image"/>
+            <span class="normal-case font-normal text-xs">  {{ selectedBrowser.name }} </span>
+          </div>
+                  <v-icon end>mdi-triangle-small-down</v-icon>
+                </v-btn>
+      </template>
+
+      <v-list>
+        <v-list-item @click="setBrowser(index)"
+        v-for="(item, index) in browsers"
+        :key="index"
+        :value="item.name"
+        active-color="primary"
+      >
+        <template v-slot:prepend>
+
+          <img  class="w-4 h-4 mr-2" :src="item.image"/>
+        </template>
+
+        <v-list-item-title>
+          <span class="text-sm" v-text="item.name"></span>
+        </v-list-item-title>
+      </v-list-item>
+      </v-list>
+    </v-menu>
             </div>
             <div>
               <label class="text-sm" for="">Check interval</label>
-              <v-select
-                density="compact"
-                variant="outlined"
-                clearable
+              <v-select 
+                density="compact" placeholder="Select interval"
+                variant="outlined" :items="intervalOptions"
               ></v-select>
             </div>
           </div>
           <div>
-            <v-slider
+            <div>
+              <v-slider
               thumb-color="secondaryBg"
               color="secondaryBg"
               v-model="slider"
               thumb-label
             ></v-slider>
+            <div class="flex mt-n8 text-xs justify-between">
+              <span>0s</span>
+              <span>100s</span>
+            </div>
+          </div>
           </div>
         </v-form>
       </v-card-text>
@@ -88,6 +121,24 @@ export default {
   props: ["show"],
   data() {
     return {
+      locationOptions: [
+        "Asia - Japan -Tokyo",
+        "Europe - Germany - Frankfrut",
+        "Europe - United Kingdom - London",
+      ],
+      intervalOptions: [
+        "Every 15 minutes",
+        "Every 30 min",
+        "Every 45 min",
+        "Every 1 hour",
+      ],
+      selectedBrowser: { image: "/assets/chrome.png", name: "Google chrome" },
+      browsers: [
+        { image: "/assets/chrome.png", name: "Google chrome" },
+        { image: "/assets/edge.png", name: "Microsoft Edge" },
+        { image: "/assets/firefox.png", name: "Mozilla Firefox" },
+        { image: "/assets/opera.png", name: "Opera browser" },
+      ],
       modal: this.show,
       slider: 2,
     };
@@ -103,6 +154,10 @@ export default {
     },
   },
   methods: {
+    setBrowser(key) {
+      console.log(key);
+      this.selectedBrowser = this.browsers[key];
+    },
     closeModal() {
       this.$emit("close");
     },

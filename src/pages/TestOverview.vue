@@ -1,27 +1,37 @@
 <template>
   <user-navigation>
-    <stat-card></stat-card>
-    <!-- <page-load-time-graph></page-load-time-graph> -->
-    <!-- <add-test-modal :show="true"></add-test-modal> -->
-    <test-list-table class="mt-16"></test-list-table>
+    <template #test-manager-nav>
+      <all-tests-nav-bar
+        :showDeleteButton="checkCount > 0 ? true : false"
+      ></all-tests-nav-bar>
+    </template>
+    <test-list-table @check="checked"></test-list-table>
   </user-navigation>
 </template>
 
 <script>
 import UserNavigation from "@/components/UserNavigation.vue";
-import StatCard from "@/components/StatCard.vue";
-import PageLoadTimeGraph from "@/components/PageLoadTimeGraph.vue";
-import AddTestModal from "@/components/AddTestModal.vue";
+import AllTestsNavBar from "@/components/AllTestsNavBar.vue";
 import TestListTable from "@/components/TestListTable.vue";
 export default {
+  data() {
+    return {
+      checkCount: 0,
+    };
+  },
   components: {
     UserNavigation,
-    StatCard,
-    PageLoadTimeGraph,
-    AddTestModal,
+    AllTestsNavBar,
     TestListTable,
+  },
+  methods: {
+    checked(count) {
+      this.checkCount = count;
+    },
   },
 };
 </script>
-,
-  
+
+<style
+  >
+</style>

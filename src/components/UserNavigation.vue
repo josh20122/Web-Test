@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer">
+  <v-navigation-drawer v-model="drawer" prominent>
     <v-list>
       <v-list-item> LOGO</v-list-item>
     </v-list>
@@ -44,36 +44,57 @@
       <span class="font-semibold"> Hello, Jonathan</span>
     </v-toolbar-title>
 
-    <v-btn color="" class="bg-secondaryBg">
+    <v-btn @click="showAddTestModal = true" color="" class="bg-secondaryBg">
       <span class="normal-case">Start test</span>
       <v-icon end>mdi-plus</v-icon>
     </v-btn>
   </v-app-bar>
-  <div class="bg-primaryBg w-full h-full md:px-10 md:pt-4">
-    <div class="p-2 pb-8">
-      <slot></slot>
+  <div class="bg-primaryBg w-full h-full">
+    <slot name="test-manager-nav" />
+
+    <div class="md:px-10 md:pt-4">
+      <div class="p-2 pb-8">
+        <slot></slot>
+      </div>
     </div>
   </div>
+  <add-test-modal
+    :show="showAddTestModal"
+    @close="showAddTestModal = false"
+  ></add-test-modal>
 </template>
 
 <script>
+import AddTestModal from "./AddTestModal.vue";
 export default {
+  components: {
+    AddTestModal,
+  },
   data() {
     return {
-      drawer: true,
+      showAddTestModal: false,
+      drawer: false,
       items: [
-        { text: "Test Overview", icon: "mdi-poll", path: "test-overview" },
-        { text: "Profile", icon: "mdi-account-badge-outline", path: "profile" },
+        { text: "Test Overview", icon: "mdi-poll", path: "/test-overview" },
+        {
+          text: "Profile",
+          icon: "mdi-account-badge-outline",
+          path: "/profile",
+        },
         {
           text: "My subscriptions",
           icon: "mdi-home-circle-outline",
-          path: "subscription",
+          path: "/subscription",
         },
-        { text: "Settings", icon: "mdi-cog-outline", path: "settings" },
+        { text: "Settings", icon: "mdi-cog-outline", path: "/settings" },
       ],
     };
   },
-  mounted() {},
+  mounted() {
+    if (window.innerWidth > 500) {
+      this.drawer = true;
+    }
+  },
 };
 </script>
 

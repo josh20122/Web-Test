@@ -13,6 +13,7 @@
       <v-tab
         v-for="(link, index) in links"
         fixed
+        :to="link.path"
         :key="index"
         color="secondaryBg"
       >
@@ -23,7 +24,7 @@
     </v-tabs>
     <v-spacer></v-spacer>
     <div class="inline-flex md:mr-16">
-      <v-btn to="/test-overview" color="" flat density="0" elevation="0">
+      <v-btn to="/login" color="" flat density="0" elevation="0">
         <span class="normal-case"> Log in </span>
       </v-btn>
 
@@ -38,6 +39,10 @@
       </v-btn>
     </div>
   </v-app-bar>
+
+  <div>
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -45,9 +50,9 @@ export default {
   data() {
     return {
       links: [
-        { page: "Home", url: "pricing" },
-        { page: "Pricing", url: "pricing" },
-        { page: "Support", url: "pricing" },
+        { page: "Home", path: "/" },
+        { page: "Pricing", path: "/pricing" },
+        { page: "Support", path: "/support" },
       ],
     };
   },

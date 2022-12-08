@@ -5,6 +5,12 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        "Inter var",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+    },
     extend: {
         colors: {
           transparent: 'transparent',
@@ -16,7 +22,7 @@ module.exports = {
         },
     },
   },
-  plugins: [require("daisyui") ,require('@tailwindcss/forms'),],
+  plugins: [require("daisyui") ,],
   daisyui: {
     themes: ["light", ],
   },

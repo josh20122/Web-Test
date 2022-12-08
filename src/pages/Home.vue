@@ -1,11 +1,12 @@
 <template>
   <div class="bg-primaryBg text-gray-700">
-    <HomeNavigation></HomeNavigation>
-    <introduction></introduction>
-    <home-about-us></home-about-us>
-    <what-makes-us-special></what-makes-us-special>
-    <how-it-works></how-it-works>
-    <home-footer></home-footer>
+    <HomeNavigation>
+      <introduction></introduction>
+      <home-about-us></home-about-us>
+      <what-makes-us-special></what-makes-us-special>
+      <how-it-works></how-it-works>
+      <home-footer></home-footer>
+    </HomeNavigation>
   </div>
 </template>
 

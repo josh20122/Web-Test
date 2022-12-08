@@ -90,7 +90,7 @@ export default {
   props: ["show"],
   data() {
     return {
-      modal: true,
+      modal: this.show,
     };
   },
   watch: {

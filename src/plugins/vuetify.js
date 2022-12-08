@@ -11,7 +11,8 @@ export default createVuetify({
         colors: {
           primaryBg:'#f4f5f9',
           secondaryBg:'#00abb3',
-          footerBg:'#1c2525'
+          footerBg:'#1c2525',
+          customBlue:'#618ee9'
         },
       },
     },
